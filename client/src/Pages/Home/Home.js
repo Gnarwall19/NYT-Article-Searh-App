@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import Panel from "../../components/Panel";
 import Form from "../../components/Form";
@@ -6,7 +6,7 @@ import Article from "../../components/Article";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
-import { Lists } from "../../components/List";
+import { List } from "../../components/List";
 
 class Home extends Component {
 	state = {
@@ -14,7 +14,7 @@ class Home extends Component {
 		q: "",
 		start_year: "",
 		end_year: "",
-		message: "Search For Articles to Begin!"
+		message: "Search For Articles To Begin!"
 	};
 
 	handleInputChange = event => {
@@ -34,7 +34,7 @@ class Home extends Component {
 				this.setState({
 					articles: res.data,
 					message: !res.data.length
-						? "No New Articles Found, Try Another Topic!"
+						? "No New Articles Found, Try a Different Query"
 						: ""
 				})
 			)
@@ -51,7 +51,6 @@ class Home extends Component {
 		API.saveArticle(article).then(res => this.getArticles());
 	};
 
-
 	render() {
 		return (
 			<Container>
@@ -59,11 +58,11 @@ class Home extends Component {
 					<Col size="md-12">
 						<Jumbotron>
 							<h1 className="text-center">
-								<strong>New York Times Article Search</strong>
+								<strong>New York Times Article Scrubber</strong>
 							</h1>
 							<h2 className="text-center">
-								Search for and Save your favorite NY Times Articles.
-                            </h2>
+								Search for and save articles of interest.
+              </h2>
 						</Jumbotron>
 					</Col>
 					<Col size="md-12">

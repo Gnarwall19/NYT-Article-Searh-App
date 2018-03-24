@@ -25,6 +25,17 @@ const Form = props => (
 				onChange={props.handleInputChange}
 				required
 			/>
+			<h4>
+				<strong>End Year</strong>
+			</h4>
+			<input
+				className="form-control"
+				type="number"
+				value={props.end_year}
+				name="end_year"
+				onChange={props.handleInputChange}
+				required
+			/>
 		</div>
 		<div className="pull-right">
 			<button

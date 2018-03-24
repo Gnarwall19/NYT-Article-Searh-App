@@ -1,5 +1,5 @@
 {
-  "name": "NYT-Article-Search-App",
+  "name": "nyt-article-search",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,10 +9,15 @@
     "express": "^4.16.3",
     "mongoose": "^5.0.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js"
   },
   "keywords": [],
   "author": "",

@@ -16,7 +16,7 @@ const Article = ({ title, url, _id, date, handleClick, buttonText, saved }) => (
 			</span>
 		</h3>
 		<p>
-			Date {saved ? "Saved" : "Published"}: {formateDate(date)}
+			Date {saved ? "Saved" : "Published"}: {formatDate(date)}
 		</p>
 	</ListItem>
 );

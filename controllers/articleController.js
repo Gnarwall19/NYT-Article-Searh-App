@@ -39,7 +39,7 @@ module.exports = {
 	remove: function (req, res) {
 		db.Article
 			.findById({
-				_id: req.params._id
+				_id: req.params.id
 			})
 			.then(dbArticle => dbArticle.remove())
 			.then(dbArticle => res.json(dbArticle))
